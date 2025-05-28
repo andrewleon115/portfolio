@@ -1,0 +1,68 @@
+{% load static %}
+{% include 'includes/header.html' %}
+{% include 'main/base.html' %}
+
+{% block content %}
+
+<main>
+         
+    <div class="tp-portfolio-area tp-portfolio-spacing fix p-relative">
+       <div class="container-fluid container-1570">
+          <div class="row">
+             <div class="col-xl-3 col-lg-4">
+                <div class="tp-portfolio-content mr-40">
+                   <div class="mb-35">
+                      <span class="tp-portfolio-subtitle d-block mb-10">Project</span>
+                      <h4 class="tp-portfolio-title"><a href="#">{{ project.title }}</a></h4>
+                   </div>
+                   <div class="mb-35">
+                      <span class="tp-portfolio-subtitle d-block mb-10">Responsibilities</span>
+                      <h4 class="tp-portfolio-title"><a href="#">{{ project.responsibilities }}</a></h4>
+                   </div>
+                   <div class="mb-45">
+                      <span class="tp-portfolio-subtitle d-block mb-15">Clients</span>
+                      {% if project.client_logos.all %}
+                      {% for logo in project.client_logos.all %}
+                      <img src="{{ logo.logo.url }}" style="height: 40px; object-fit: cover;" class="rounded-circle tp-about-testimonial-avatar mr-15" alt="No image">
+                      {% endfor %}
+
+                      {% else %}
+                        <img src="{% static 'assets/img/author/thumb-2.jpg' %}" class="rounded-circle tp-about-testimonial-avatar mr-15" style="height: 40px; object-fit: cover;" alt="Default Logo">
+                      {% endif %}
+                   </div> 
+                   
+                 
+                   <div class="mb-35">
+                      <span class="tp-portfolio-subtitle d-block mb-15">Project details</span>
+                      <p class="tp-portfolio-text mb-30">{{ project.description }}</p>
+                      <a class="tp-portfolio-btn" href="{{ project.website_link }}">Open website link</a>
+                   </div>
+                </div>
+             </div>
+             <div class="col-xl-9 col-lg-8">
+                <div class="tp-portfolio-thumb-wrap ml-90">
+                   <div class="swiper-container tp-portfolio-slider-active">
+                      <div class="swiper-wrapper">
+                        {% for img in project.images.all %}
+                         <div class="swiper-slide">
+                            <div class="tp-portfolio-thumb">
+                               <img class="w-100" src="{{ img.image.url }}"  style="height: 581px; object-fit: cover;" alt="">
+                            </div>
+                         </div>
+                         {% endfor %}
+                         
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+       <div class="tp-portfolio-copyright pt-140">
+          
+       </div>
+    </div>
+
+ </main>
+{% endblock %}
+{% include 'includes/footer.html' %}
+

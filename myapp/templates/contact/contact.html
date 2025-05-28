@@ -1,0 +1,172 @@
+{% load static %}
+{% include 'includes/header.html' %}
+{% include 'main/base.html' %}
+
+
+
+
+{% block content %}
+
+
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
+
+<main class="p-relative tp-home-svg-wrap z-index-1">
+         
+    <div class="tp-home-svg-shape">
+       <svg width="1920" height="779" viewBox="0 0 1920 779" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g filter="url(#filter0_f_27_375)">
+            <path class="line-1" d="M2087 308.5C1974 236.833 1691.4 145.6 1465 354C1182 614.5 1965.5 427.5 1556 207.5C1146.5 -12.5 788 331 762.5 490.5C737 650 1354.5 230 671.5 184.5C-11.5 139 381 -17.5 588 83.5C795 184.5 286.5 834 -62 543.5C-410.5 253 492 414.5 176 905" stroke="white" stroke-opacity="0.06" stroke-width="40" />
+          </g>
+          <defs>
+            <filter id="filter0_f_27_375" x="-193.436" y="0.173615" width="2321.15" height="945.658" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+              <feGaussianBlur stdDeviation="15" result="effect1_foregroundBlur_27_375" />
+            </filter>
+          </defs>
+       </svg>
+    </div>
+
+    <!-- tp-main-area-start -->
+    <div class="tp-home-area tp-about-wrap tp-about-spacing">
+       <div class="container">
+          <div class="row gx-24">
+             <div class="col-xl-4 col-lg-5">
+                <div class="tp-service-left mb-30">
+                   <div class="tp-home-2-author tp-home-author-shadow mb-25 p-relative">
+                      <img class="w-100 tp-round-10" src="{% static 'image/ahimas.jpg' %}" alt="">
+                   </div>
+                   <div class="tp-home-2-social-wrap mb-25 tp-round-4">
+                      <h3 class="tp-home-2-title mb-10">Stay with me</h3>
+                      <span class="tp-home-2-border mb-20"></span>
+                      <div class="tp-home-2-social-inner">
+                         <a href="#" class="tp-home-social-icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                               <path d="M11.9027 8.46864L19.3482 0H17.5838L11.119 7.3532L5.95547 0H0L7.8082 11.1193L0 20H1.76443L8.59152 12.2348L14.0445 20H20L11.9023 8.46864H11.9027ZM9.48608 11.2173L8.69495 10.1101L2.40018 1.29967H5.11025L10.1902 8.40994L10.9813 9.51718L17.5847 18.7594H14.8746L9.48608 11.2177V11.2173Z" fill="currentColor" />
+                            </svg>
+                         </a>
+                         <a href="#" class="tp-home-social-icon">
+                            <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                               <path d="M11.8481 20C9.99373 20 8.60751 18.1501 8.05699 16.3128L5.1898 6.80135C5.08318 6.44965 4.80838 6.17191 4.45478 6.05839C4.10099 5.94488 3.71346 6.01006 3.41771 6.23269L2.12661 7.20762L0 4.40788L4.81635 0.770695C5.84415 -0.00760181 7.20386 -0.212108 8.41949 0.228945C9.6353 0.670181 10.5374 1.69528 10.8101 2.94557L12.6392 11.276C12.7469 11.7696 13.0758 12.5008 13.5253 12.5008C15.5316 12.5008 17.4177 8.75744 17.4177 6.50146C17.4177 5.3969 16.511 4.50162 15.3923 4.50162C15.2842 4.5018 15.1763 4.51004 15.0695 4.5267L14.1266 4.67665L14.5316 3.82035C15.6328 1.50194 17.9619 0.00210175 20.4556 0.00210175C22.4745 0.00210175 24 1.50816 24 3.50178C24 9.18238 16.7342 20 11.8481 20ZM4.10767 5.00162C5.05648 5.00107 5.8931 5.61606 6.16456 6.51391L9.03157 16.0254C9.46193 17.4564 10.5316 19 11.8544 19C15.8101 19 22.9935 9.00735 22.9935 3.50178C22.9935 2.05193 21.9303 1.00193 20.462 1.00193C18.6201 1.00193 16.8861 1.97686 15.8544 3.53291C17.3363 3.76085 18.4295 5.02048 18.4303 6.50146C18.4303 8.95737 16.4051 13.5006 13.5253 13.5006C12.4684 13.5006 11.8544 12.4133 11.6455 11.4883L9.82277 3.15795C9.62436 2.24087 8.96333 1.48821 8.07182 1.1647C7.18031 0.841366 6.18292 0.992229 5.43029 1.56437L1.41774 4.59536L2.32909 5.7953L2.80378 5.43279C3.1787 5.15175 3.63688 5.00016 4.10767 5.00162Z" fill="currentColor" />
+                            </svg>
+                         </a>
+                         <a href="#" class="tp-home-social-icon">
+                            <svg width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                               <path d="M6.74157 20V10.8777H9.80231L10.2615 7.32156H6.74157V5.05147C6.74157 4.0222 7.02622 3.32076 8.50386 3.32076L10.3854 3.31999V0.13923C10.06 0.0969453 8.94308 0 7.64308 0C4.92848 0 3.07002 1.65697 3.07002 4.69927V7.32156H0V10.8777H3.07002V20H6.74157Z" fill="currentColor" />
+                            </svg>
+                         </a>
+                         <a href="#" class="tp-home-social-icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                               <path d="M14.5862 0H5.41382C2.42859 0 0 2.42859 0 5.41382V14.5863C0 17.5714 2.42859 20 5.41382 20H14.5863C17.5714 20 20 17.5714 20 14.5863V5.41382C20 2.42859 17.5714 0 14.5862 0ZM18.8275 14.5863C18.8275 16.9249 16.9249 18.8275 14.5862 18.8275H5.41382C3.0751 18.8275 1.17249 16.9249 1.17249 14.5863V5.41382C1.17249 3.0751 3.0751 1.17249 5.41382 1.17249H14.5863C16.9249 1.17249 18.8275 3.0751 18.8275 5.41382V14.5863Z" fill="currentColor" />
+                               <path d="M9.99985 4.53139C6.98441 4.53139 4.53125 6.98454 4.53125 9.99998C4.53125 13.0154 6.98441 15.4686 9.99985 15.4686C13.0153 15.4686 15.4684 13.0154 15.4684 9.99998C15.4684 6.98454 13.0153 4.53139 9.99985 4.53139ZM9.99985 14.2961C7.63107 14.2961 5.70374 12.3689 5.70374 9.99998C5.70374 7.63121 7.63107 5.70387 9.99985 5.70387C12.3688 5.70387 14.296 7.63121 14.296 9.99998C14.296 12.3689 12.3688 14.2961 9.99985 14.2961Z" fill="currentColor" />
+                               <path d="M15.5981 2.58925C14.707 2.58925 13.9822 3.31419 13.9822 4.20515C13.9822 5.09627 14.707 5.82121 15.5981 5.82121C16.4892 5.82121 17.2141 5.09627 17.2141 4.20515C17.2141 3.31404 16.4892 2.58925 15.5981 2.58925ZM15.5981 4.64857C15.3536 4.64857 15.1547 4.4496 15.1547 4.20515C15.1547 3.96056 15.3536 3.76173 15.5981 3.76173C15.8427 3.76173 16.0417 3.96056 16.0417 4.20515C16.0417 4.4496 15.8427 4.64857 15.5981 4.64857Z" fill="currentColor" />
+                            </svg>
+                         </a>
+                         <a href="#" class="tp-home-social-icon">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                               <path d="M10.9998 21C16.5226 21 20.9997 16.5228 20.9997 11C20.9997 5.47715 16.5226 1 10.9998 1C5.47708 1 1 5.47715 1 11C1 16.5228 5.47708 21 10.9998 21Z" stroke="currentColor" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                               <path d="M7.73584 1.53339C11.4691 7.00005 14.4024 13.0667 16.3357 19.4667" stroke="currentColor" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                               <path d="M1.06934 10.0667C6.66924 10.6 12.7358 8.73332 18.7357 4.66666" stroke="currentColor" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                               <path d="M4.13379 18.2667C7.33373 13.8667 12.4003 11 18.0002 11C19.0002 11 20.0002 11.0667 21.0002 11.2667" stroke="currentColor" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                         </a>
+                      </div>
+                   </div>
+                   <div class="tp-contact-location">
+                      <div class="tp-contact-form-location-item mb-25">
+                         <span>
+                            <svg width="18" height="24" viewBox="0 0 18 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                               <path d="M8.99999 0C6.61402 0.00316505 4.32667 0.952392 2.63953 2.63953C0.952392 4.32667 0.00316505 6.61402 0 8.99999C0 15.4612 8.38499 23.5537 8.74124 23.895C8.81054 23.9623 8.90336 24 8.99999 24C9.09662 24 9.18945 23.9623 9.25874 23.895C9.61499 23.5537 18 15.4612 18 8.99999C17.9968 6.61402 17.0476 4.32667 15.3604 2.63953C13.6733 0.952392 11.386 0.00316505 8.99999 0ZM8.99999 13.125C8.18414 13.125 7.38662 12.8831 6.70827 12.4298C6.02991 11.9765 5.5012 11.3323 5.18899 10.5786C4.87678 9.82481 4.79509 8.99541 4.95426 8.19524C5.11342 7.39507 5.50629 6.66007 6.08318 6.08318C6.66007 5.50629 7.39507 5.11342 8.19524 4.95426C8.99541 4.79509 9.82481 4.87678 10.5786 5.18899C11.3323 5.5012 11.9765 6.02991 12.4298 6.70827C12.8831 7.38662 13.125 8.18414 13.125 8.99999C13.1243 10.0938 12.6895 11.1426 11.9161 11.9161C11.1426 12.6895 10.0938 13.1243 8.99999 13.125Z" fill="currentColor" />
+                            </svg>
+                         </span>
+                         <p>23 Artist Avenue Imagino<br>
+                            985, Wonderland</p>
+                      </div>
+                      <div class="tp-contact-form-location-item">
+                         <span>
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                               <path d="M21.1121 6.12857L19.6429 7.37V5.17786L20.8764 5.96357C20.9578 6.01442 21.0365 6.0695 21.1121 6.12857ZM21.9371 7.48786L19.6429 9.42857L12.5164 15.4629C12.2481 15.6808 11.9379 15.8413 11.605 15.9343C11.4729 15.9655 11.3391 15.9891 11.2043 16.005H10.7957C10.6609 15.9891 10.5271 15.9655 10.395 15.9343C10.065 15.8439 9.75734 15.686 9.49143 15.4707L2.35714 9.42857L0.0628571 7.48786C0.0260006 7.6398 0.00493652 7.79515 0 7.95143V19.6429C0 20.268 0.248341 20.8676 0.690391 21.3096C1.13244 21.7517 1.73199 22 2.35714 22H19.6429C20.268 22 20.8676 21.7517 21.3096 21.3096C21.7517 20.8676 22 20.268 22 19.6429V7.95143C21.9951 7.79515 21.974 7.6398 21.9371 7.48786ZM10.4971 14.2607L3.92857 8.69786V2.35714C3.92857 1.73199 4.17691 1.13244 4.61896 0.690391C5.06101 0.248341 5.66056 0 6.28571 0H15.7143C16.3394 0 16.939 0.248341 17.381 0.690391C17.8231 1.13244 18.0714 1.73199 18.0714 2.35714V8.69786L11.5029 14.2607C11.3617 14.3783 11.1837 14.4427 11 14.4427C10.8163 14.4427 10.6383 14.3783 10.4971 14.2607ZM7.07143 4.71429C7.07143 4.92267 7.15421 5.12252 7.30156 5.26987C7.44891 5.41722 7.64876 5.5 7.85714 5.5H14.1429C14.3512 5.5 14.5511 5.41722 14.6984 5.26987C14.8458 5.12252 14.9286 4.92267 14.9286 4.71429C14.9286 4.5059 14.8458 4.30605 14.6984 4.1587C14.5511 4.01135 14.3512 3.92857 14.1429 3.92857H7.85714C7.64876 3.92857 7.44891 4.01135 7.30156 4.1587C7.15421 4.30605 7.07143 4.5059 7.07143 4.71429ZM7.85714 8.64286H14.1429C14.3512 8.64286 14.5511 8.56008 14.6984 8.41273C14.8458 8.26538 14.9286 8.06553 14.9286 7.85714C14.9286 7.64876 14.8458 7.44891 14.6984 7.30156C14.5511 7.15421 14.3512 7.07143 14.1429 7.07143H7.85714C7.64876 7.07143 7.44891 7.15421 7.30156 7.30156C7.15421 7.44891 7.07143 7.64876 7.07143 7.85714C7.07143 8.06553 7.15421 8.26538 7.30156 8.41273C7.44891 8.56008 7.64876 8.64286 7.85714 8.64286ZM2.35714 5.17786L1.11571 5.96357C1.0363 6.02212 0.960226 6.08508 0.887857 6.15214L2.35714 7.37V5.17786Z" fill="currentColor" />
+                            </svg>
+                         </span>
+                         <div>
+                            <p>Direct email:</p>
+                            <a href="mailto:heikoinfo@mail.com">{{ superuser.email }}</a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <div class="col-xl-8 col-lg-7">
+                <div class="tp-contact-form-wrap tp-contact-form-main-wrap">
+                   <h3 class="tp-contact-form-main-title mb-40">Let’s work with <span>together 👋</span></h3>
+                   <form action="{% url 'contact' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="tp-contact-form-input">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-15">
+                                    <input name="name" class="input" type="text" placeholder="First name*" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-15">
+                                    <input name="l_name" class="input" type="text" placeholder="Last name*" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-15">
+                                    <input name="email" class="input" type="email" placeholder="Email.com" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-15">
+                                    <input name="phone" class="input" type="text" placeholder="Phone number">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-15">
+                                    <input name="subject" class="input" type="text" placeholder="Enter subject" required>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-15 lh-1">
+                                    <textarea name="message" class="input textarea" placeholder="Write your message" required></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="tp-contact-form-btn">Send message</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                </div>
+             </div>
+             
+          </div>
+       </div>
+    </div>
+    <!-- tp-main-area-end -->
+
+ </main>
+{% endblock %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% if messages %}
+  <script>
+    {% for message in messages %}
+      Swal.fire({
+        icon: 'success',
+        title: 'Message Sent!',
+        text: '{{ message|escapejs }}',
+        confirmButtonText: 'OK'
+      });
+    {% endfor %}
+  </script>
+{% endif %}
+
+{% include 'includes/footer.html' %}

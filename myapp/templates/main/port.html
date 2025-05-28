@@ -1,0 +1,263 @@
+{% load static %}
+{% include 'includes/header.html' %}
+{% include 'main/base.html' %}
+
+{% block content %}
+<main class="p-relative tp-home-svg-wrap z-index-1">
+    
+    <div class="tp-home-svg-shape">
+       <svg width="1920" height="779" viewBox="0 0 1920 779" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g filter="url(#filter0_f_27_375)">
+            <path class="line-1" d="M2087 308.5C1974 236.833 1691.4 145.6 1465 354C1182 614.5 1965.5 427.5 1556 207.5C1146.5 -12.5 788 331 762.5 490.5C737 650 1354.5 230 671.5 184.5C-11.5 139 381 -17.5 588 83.5C795 184.5 286.5 834 -62 543.5C-410.5 253 492 414.5 176 905" stroke="white" stroke-opacity="0.06" stroke-width="40" />
+          </g>
+          <defs>
+            <filter id="filter0_f_27_375" x="-193.436" y="0.173615" width="2321.15" height="945.658" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+              <feGaussianBlur stdDeviation="15" result="effect1_foregroundBlur_27_375" />
+            </filter>
+          </defs>
+       </svg>
+    </div>
+    
+    <!-- tp-main-area-start -->
+    <div class="tp-home-area tp-home-2-spacing">
+       <div class="container">
+          <div class="row gx-20">
+             <div class="col-xl-4 col-lg-6 col-md-6">
+                <div class="row gx-20">
+                   <div class="col-lg-5 col-md-5 col-sm-6 mb-20">
+                      <div class="tp-home-2-author tp-home-author-shadow p-relative h-100 fix">
+                         <img class="w-100 tp-round-4" src="{% static 'image/ahimas.jpg' %}" alt="">
+                      </div>
+                   </div>
+                   <div class="col-lg-7 col-md-7 col-sm-6 mb-20">
+                      <div class="tp-home-2-about-wrap h-100">
+                         <div class="d-flex justify-content-between mb-5">
+                            <span class="tp-home-2-about-title">Mode</span>
+                            <span class="tp-home-2-about-active">
+                               <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <circle cx="4" cy="4" r="4" fill="#6DE767" />
+                               </svg>
+                            </span>
+                         </div>
+                         <span class="tp-home-2-border mb-15"></span>
+                         <p class="tp-home-2-para">{{ about.bio|truncatewords:20 }}</p>
+                         <a href="{% url 'about' %}" class="tp-btn-2 w-100 d-block text-center">About me</a>
+                      </div>
+                   </div>
+                </div>
+                <div style="margin-bottom: 20px;" class="tp-home-2-expreance-wrap mb-20">
+                    <h3 style="margin-bottom: 10px; font-size: 24px;" class="tp-home-2-title mb-10">Work experience</h3>
+                    <span style="display: block; height: 2px; width: 50px; background-color: #000; margin-bottom: 30px;"></span>
+                 
+                    {% for exp in experiences %}
+                    <div style="display: flex; align-items: center; margin-bottom: 25px;">
+                       <span style="margin-right: 40px; font-weight: bold; min-width: 100px;">
+                          {{ exp.start_year }} - {% if exp.end_year %}{{ exp.end_year }}{% else %}Present{% endif %}
+                       </span>
+                 
+                       <span style="margin-right: 15px;">
+                          <img src="{{ exp.logo.url }}" alt="{{ exp.company_name }}" style="height: 40px; width: auto;">
+                       </span>
+                 
+                       <div>
+                          <h6 style="margin: 0; font-size: 16px;" class="tp-home-2-title mb-0">{{ exp.company_name }}</h6>
+                          <span style="font-size: 14px; color: #666;" class="tp-home-2-expreance-subtitle">{{ exp.role }}</span>
+                       </div>
+                    </div>
+                    {% endfor %}
+                 </div>
+                 
+                <div class="tp-home-2-expreance-bottom">
+                   <div class="row gx-20">
+                      <div class="col-lg-6 col-md-12 col-sm-6 mb-20">
+                         <div class="tp-home-2-big-years-wrap text-center h-100">
+                            <h3 class="tp-home-2-title mb-10">Years experience</h3>
+                            <span class="tp-home-2-border mb-5"></span>
+                            <h2 class="tp-home-2-big-years mb-0">{{ total_experience }}</h2>
+                         </div>
+                      </div>
+                      <div class="col-lg-6  col-md-12 col-sm-6 mb-20">
+                         <div class="tp-home-2-big-years-wrap-2 h-100">
+                            <h3 class="tp-home-2-title mb-10"> My CV</h3>
+                            <span class="tp-home-2-border mb-50"></span>
+                            
+                            <a href="{% url 'resume_view' %}" class="tp-btn-2 mb-5 w-100 d-flex justify-content-between">
+                               View
+                               <span>
+                                  <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                     <path d="M6.8667 1L11 5.00003L6.8667 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                                     <path d="M1 4.99902H11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                                  </svg>
+                               </span>
+                            </a>
+                            <a href="{% url 'resume_download' %}" class="tp-btn-2 w-100 d-flex justify-content-between">
+                               Download
+                               <span>
+                                  <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                     <path d="M6.8667 1L11 5.00003L6.8667 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                                     <path d="M1 4.99902H11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                                  </svg>
+                               </span>
+                            </a>
+                           
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+
+             <div class="col-xl-4 col-lg-6  col-md-6">
+                <div class="tp-home-2-project-wrap mb-20 tp-round-4">
+                   <h3 class="tp-home-2-title mb-10">Latest projects</h3>
+                   <span class="tp-home-2-border mb-30"></span>
+                   <div class="swiper-container tp-home-service-active">
+                      <div class="swiper-wrapper">
+                        {% for project in project_list %}
+
+                        {% for img in project.images.all %}
+                         <div class="swiper-slide">
+                            <div class="tp-home-2-project-item p-relative">
+                                <img class="w-100 tp-round-4" src="{{ img.image.url }}" alt="" style="height: 184px; object-fit: cover;">
+
+                               <a href="{% url 'project_detail' img.project.id %}" class="tp-home-2-project-icon">
+                                  <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                     <path d="M9.80005 1L16 7.00005L9.80005 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                     <path d="M1 6.99854H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                  </svg>
+                               </a>
+                               
+                               <h2 class="tp-home-2-project-title p-absolute"><a class="underline-white" href="{% url 'project_detail' img.project.id %}">{{ project.title }}</a></h2>
+                               
+                            </div>
+
+                         </div>
+                         {% endfor %}
+                         {% endfor %}
+                         
+                         
+                      </div>
+                   </div>
+                   <div class="tp-home-service-pagination mt-25 text-center"></div>
+                </div>
+                <div class="tp-home-2-project-wrap mb-20 tp-round-4">
+                   <h3 class="tp-home-2-title mb-10">What I do Skill</h3>
+                   <span class="tp-home-2-border mb-30"></span>
+                   <div class="tp-home-2-service-social-wrap">
+                      {% for s in skill %}
+                      <a href="{% url 'skill' %}" class="tp-home-2-service-social-item text-center mb-20">
+                        <span class="tp-home-2-service-social-icon mb-15">
+                           {% if s.icon %}
+                               <img src="{{ s.icon.url }}" alt="{{ s.name }}" width="40" height="40">
+                           {% else %}
+                               <!-- fallback SVG if no icon uploaded -->
+                               <svg width="23" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                   <circle cx="12" cy="12" r="10" />
+                               </svg>
+                           {% endif %}
+                       </span>
+                         <h6 class="tp-home-2-service-link">{{ s.name }}</h6>
+                      </a>
+                      {% endfor %}
+                      
+                   </div>
+                </div>
+             </div>
+             <div class="col-xl-4 col-lg-6">
+                <div class="tp-home-2-social-wrap mb-20 tp-round-4">
+                   <h3 class="tp-home-2-title mb-10">Stay with me</h3>
+                   <span class="tp-home-2-border mb-20"></span>
+                   <div class="tp-home-2-social-inner">
+                      <a href="#" class="tp-home-social-icon">
+                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.9027 8.46864L19.3482 0H17.5838L11.119 7.3532L5.95547 0H0L7.8082 11.1193L0 20H1.76443L8.59152 12.2348L14.0445 20H20L11.9023 8.46864H11.9027ZM9.48608 11.2173L8.69495 10.1101L2.40018 1.29967H5.11025L10.1902 8.40994L10.9813 9.51718L17.5847 18.7594H14.8746L9.48608 11.2177V11.2173Z" fill="currentColor" />
+                         </svg>
+                      </a>
+                      <a href="#" class="tp-home-social-icon">
+                         <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.8481 20C9.99373 20 8.60751 18.1501 8.05699 16.3128L5.1898 6.80135C5.08318 6.44965 4.80838 6.17191 4.45478 6.05839C4.10099 5.94488 3.71346 6.01006 3.41771 6.23269L2.12661 7.20762L0 4.40788L4.81635 0.770695C5.84415 -0.00760181 7.20386 -0.212108 8.41949 0.228945C9.6353 0.670181 10.5374 1.69528 10.8101 2.94557L12.6392 11.276C12.7469 11.7696 13.0758 12.5008 13.5253 12.5008C15.5316 12.5008 17.4177 8.75744 17.4177 6.50146C17.4177 5.3969 16.511 4.50162 15.3923 4.50162C15.2842 4.5018 15.1763 4.51004 15.0695 4.5267L14.1266 4.67665L14.5316 3.82035C15.6328 1.50194 17.9619 0.00210175 20.4556 0.00210175C22.4745 0.00210175 24 1.50816 24 3.50178C24 9.18238 16.7342 20 11.8481 20ZM4.10767 5.00162C5.05648 5.00107 5.8931 5.61606 6.16456 6.51391L9.03157 16.0254C9.46193 17.4564 10.5316 19 11.8544 19C15.8101 19 22.9935 9.00735 22.9935 3.50178C22.9935 2.05193 21.9303 1.00193 20.462 1.00193C18.6201 1.00193 16.8861 1.97686 15.8544 3.53291C17.3363 3.76085 18.4295 5.02048 18.4303 6.50146C18.4303 8.95737 16.4051 13.5006 13.5253 13.5006C12.4684 13.5006 11.8544 12.4133 11.6455 11.4883L9.82277 3.15795C9.62436 2.24087 8.96333 1.48821 8.07182 1.1647C7.18031 0.841366 6.18292 0.992229 5.43029 1.56437L1.41774 4.59536L2.32909 5.7953L2.80378 5.43279C3.1787 5.15175 3.63688 5.00016 4.10767 5.00162Z" fill="currentColor" />
+                         </svg>
+                      </a>
+                      <a href="#" class="tp-home-social-icon">
+                         <svg width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.74157 20V10.8777H9.80231L10.2615 7.32156H6.74157V5.05147C6.74157 4.0222 7.02622 3.32076 8.50386 3.32076L10.3854 3.31999V0.13923C10.06 0.0969453 8.94308 0 7.64308 0C4.92848 0 3.07002 1.65697 3.07002 4.69927V7.32156H0V10.8777H3.07002V20H6.74157Z" fill="currentColor" />
+                         </svg>
+                      </a>
+                      <a href="#" class="tp-home-social-icon">
+                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.5862 0H5.41382C2.42859 0 0 2.42859 0 5.41382V14.5863C0 17.5714 2.42859 20 5.41382 20H14.5863C17.5714 20 20 17.5714 20 14.5863V5.41382C20 2.42859 17.5714 0 14.5862 0ZM18.8275 14.5863C18.8275 16.9249 16.9249 18.8275 14.5862 18.8275H5.41382C3.0751 18.8275 1.17249 16.9249 1.17249 14.5863V5.41382C1.17249 3.0751 3.0751 1.17249 5.41382 1.17249H14.5863C16.9249 1.17249 18.8275 3.0751 18.8275 5.41382V14.5863Z" fill="currentColor" />
+                            <path d="M9.99985 4.53139C6.98441 4.53139 4.53125 6.98454 4.53125 9.99998C4.53125 13.0154 6.98441 15.4686 9.99985 15.4686C13.0153 15.4686 15.4684 13.0154 15.4684 9.99998C15.4684 6.98454 13.0153 4.53139 9.99985 4.53139ZM9.99985 14.2961C7.63107 14.2961 5.70374 12.3689 5.70374 9.99998C5.70374 7.63121 7.63107 5.70387 9.99985 5.70387C12.3688 5.70387 14.296 7.63121 14.296 9.99998C14.296 12.3689 12.3688 14.2961 9.99985 14.2961Z" fill="currentColor" />
+                            <path d="M15.5981 2.58925C14.707 2.58925 13.9822 3.31419 13.9822 4.20515C13.9822 5.09627 14.707 5.82121 15.5981 5.82121C16.4892 5.82121 17.2141 5.09627 17.2141 4.20515C17.2141 3.31404 16.4892 2.58925 15.5981 2.58925ZM15.5981 4.64857C15.3536 4.64857 15.1547 4.4496 15.1547 4.20515C15.1547 3.96056 15.3536 3.76173 15.5981 3.76173C15.8427 3.76173 16.0417 3.96056 16.0417 4.20515C16.0417 4.4496 15.8427 4.64857 15.5981 4.64857Z" fill="currentColor" />
+                         </svg>
+                      </a>
+                      <a href="#" class="tp-home-social-icon">
+                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.9998 21C16.5226 21 20.9997 16.5228 20.9997 11C20.9997 5.47715 16.5226 1 10.9998 1C5.47708 1 1 5.47715 1 11C1 16.5228 5.47708 21 10.9998 21Z" stroke="currentColor" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M7.73584 1.53339C11.4691 7.00005 14.4024 13.0667 16.3357 19.4667" stroke="currentColor" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M1.06934 10.0667C6.66924 10.6 12.7358 8.73332 18.7357 4.66666" stroke="currentColor" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M4.13379 18.2667C7.33373 13.8667 12.4003 11 18.0002 11C19.0002 11 20.0002 11.0667 21.0002 11.2667" stroke="currentColor" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                         </svg>
+                      </a>
+                   </div>
+                </div>
+                <div class="tp-home-2-social-wrap mb-20 tp-round-4 tp-home-2-blog-wrap">
+                  {% comment %} {% for b in blogs %}
+                   <h3 class="tp-home-2-title mb-10">Blog post</h3>
+                   <span class="tp-home-2-border mb-30"></span>
+                   <img class="w-100 tp-round-4 mb-20" src="{{ b.image.url }}" alt="{{ b.title }}">
+                   <h3 class="tp-home-2-blog-title mb-0">
+                      <a class="underline-white" href="blog.html">The existing website had an
+                         outdated design</a>
+                   </h3>
+                  {% endfor %}  {% endcomment %}
+                  <div class="swiper-container tp-home-service-active">
+                     <div class="swiper-wrapper">
+                       
+
+                       {% for i in blogs %}
+                        <div class="swiper-slide">
+                           <div class="tp-home-2-project-item p-relative">
+                               <img class="w-100 tp-round-4" src="{{ i.image.url }}" alt="" style="height: 184px; object-fit: cover;">
+
+                              <a href="{% url 'blog' %}" class="tp-home-2-project-icon">
+                                 <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.80005 1L16 7.00005L9.80005 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M1 6.99854H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                 </svg>
+                              </a>
+                              
+                              <h2 class="tp-home-2-project-title p-absolute"><a class="underline-white" href="{% url 'blog' %}">{{ i.title }}</a></h2>
+                              
+                           </div>
+
+                        </div>
+                        {% endfor %}
+                        
+                     </div>
+                        
+                     </div>
+                   
+                </div>
+                <div class="tp-home-2-contact-wrap tp-round-4">
+                   <h2 class="tp-home-contact-title mb-25 p-relative z-index-1">Let’s work with <span>together</span>👋</h2>
+                   <div class="text-end">
+                      <a href="{% url 'contact' %}" class="tp-home-project-icon p-relative z-index-1">
+                         <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.80005 1L16 7.00005L9.80005 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M1 6.99854H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                         </svg>
+                      </a>
+                   </div>
+                </div>
+             </div>
+             
+          </div>
+       </div>
+    </div>
+    <!-- tp-main-area-end -->
+
+ </main>
+
+{% endblock %}
+{% include 'includes/footer.html' %}

@@ -1,0 +1,190 @@
+{% load static %}
+{% include 'includes/header.html' %}
+{% include 'main/base.html' %}
+
+
+
+
+{% block content %}
+<main>
+         
+   <!-- tp-main-area-start -->
+   <div class="tp-postbox-details-area tp-about-spacing">
+      <div class="container">
+         <div class="row gx-24 justify-content-center">
+            <div class="col-lg-12">
+               <div class="tp-postbox-banner-wrap text-center pb-95">
+                  
+                  <div class="swiper feedbackSwiper">
+                     <div class="swiper-wrapper">
+                     
+                        {% for blog in blogs %}
+                        <div class="swiper-slide">
+                           <h2 class="tp-postbox-title mb-70">{{ blog.title }}</h2>
+                           
+                           <div class="tp-postbox-banner p-relative">
+                              <img class="w-100" src="{{ blog.image.url }}" style="height: 581px; object-fit: cover;" alt="{{ blog.title }}">
+                              <div class="tp-postbox-date">
+                                 <h6>{{ blog.date_posted|date:"d" }}</h6>
+                                 <span>{{ blog.date_posted|date:"b" }}</span>
+                              </div>
+                           </div>
+                        </div>
+                        {% endfor %}
+                        
+                     </div>
+                  </div>
+            
+               </div>
+            </div>
+            
+            <div class="col-lg-2">
+               <div class="tp-postbox-social">
+                  <a href="#">
+                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.9027 8.46864L19.3482 0H17.5838L11.119 7.3532L5.95547 0H0L7.8082 11.1193L0 20H1.76443L8.59152 12.2348L14.0445 20H20L11.9023 8.46864H11.9027ZM9.48608 11.2173L8.69495 10.1101L2.40018 1.29967H5.11025L10.1902 8.40994L10.9813 9.51718L17.5847 18.7594H14.8746L9.48608 11.2177V11.2173Z" fill="currentColor" />
+                     </svg>
+                  </a>
+                  <a href="#">
+                     <svg width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.74157 20V10.8777H9.80231L10.2615 7.32156H6.74157V5.05147C6.74157 4.0222 7.02622 3.32076 8.50386 3.32076L10.3854 3.31999V0.13923C10.06 0.0969453 8.94308 0 7.64308 0C4.92848 0 3.07002 1.65697 3.07002 4.69927V7.32156H0V10.8777H3.07002V20H6.74157Z" fill="currentColor" />
+                     </svg>
+                  </a>
+                  <a href="#">
+                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5862 0H5.41382C2.42859 0 0 2.42859 0 5.41382V14.5863C0 17.5714 2.42859 20 5.41382 20H14.5863C17.5714 20 20 17.5714 20 14.5863V5.41382C20 2.42859 17.5714 0 14.5862 0ZM18.8275 14.5863C18.8275 16.9249 16.9249 18.8275 14.5862 18.8275H5.41382C3.0751 18.8275 1.17249 16.9249 1.17249 14.5863V5.41382C1.17249 3.0751 3.0751 1.17249 5.41382 1.17249H14.5863C16.9249 1.17249 18.8275 3.0751 18.8275 5.41382V14.5863Z" fill="currentColor" />
+                        <path d="M9.99985 4.53137C6.98441 4.53137 4.53125 6.98453 4.53125 9.99997C4.53125 13.0154 6.98441 15.4686 9.99985 15.4686C13.0153 15.4686 15.4684 13.0154 15.4684 9.99997C15.4684 6.98453 13.0153 4.53137 9.99985 4.53137ZM9.99985 14.2961C7.63107 14.2961 5.70374 12.3689 5.70374 9.99997C5.70374 7.6312 7.63107 5.70386 9.99985 5.70386C12.3688 5.70386 14.296 7.6312 14.296 9.99997C14.296 12.3689 12.3688 14.2961 9.99985 14.2961Z" fill="currentColor" />
+                        <path d="M15.5983 2.58923C14.7072 2.58923 13.9824 3.31418 13.9824 4.20514C13.9824 5.09625 14.7072 5.8212 15.5983 5.8212C16.4894 5.8212 17.2144 5.09625 17.2144 4.20514C17.2144 3.31403 16.4894 2.58923 15.5983 2.58923ZM15.5983 4.64856C15.3539 4.64856 15.1549 4.44958 15.1549 4.20514C15.1549 3.96054 15.3539 3.76172 15.5983 3.76172C15.8429 3.76172 16.0419 3.96054 16.0419 4.20514C16.0419 4.44958 15.8429 4.64856 15.5983 4.64856Z" fill="currentColor" />
+                     </svg>
+                  </a>
+               </div>
+            </div>
+            <div class="col-lg-8">
+               <div class="swiper feedbackSwiper">
+                  <div class="swiper-wrapper">
+            
+                     {% for blog in blogs %}
+                     <div class="swiper-slide">
+                        <div class="tp-postbox-content mb-90">
+                           <p class="mb-50">
+                              {{ blog.content }}
+                           </p>
+            
+                           <div class="tp-postbox-blockquote mb-50">
+                              <blockquote>
+                                 <div class="postbox-link-post d-sm-flex align-items-start">
+                                    <span class="postbox-link-icon mr-30 mb-20 d-inline-block">
+                                       <svg width="44" height="40" viewBox="0 0 44 40" fill="none"
+                                          xmlns="http://www.w3.org/2000/svg">
+                                          <path
+                                             d="M44 1.05264L39.9691 0L25.2477 37.0175L28.0518 40L41.1959 36.8421L44 1.05264Z"
+                                             fill="#6de767" />
+                                          <path
+                                             d="M18.7523 1.05264L14.7214 0L0 37.0175L2.80408 40L15.9482 36.8421L18.7523 1.05264Z"
+                                             fill="#6de767" />
+                                       </svg>
+                                    </span>
+            
+                                    <div class="tp-postbox-paragraph">
+                                       {% if blog.replies.all %}
+                                          {% for reply in blog.replies.all %}
+                                          <p>{{ reply.message }}</p>
+                                          <div class="tp-postbox-link-author">
+                                             <span>{{ reply.name }}</span>
+                                             <p>{{ reply.city }}</p>
+                                          </div>
+                                          {% endfor %}
+                                       {% else %}
+                                          <p>No feedback yet.</p>
+                                       {% endif %}
+                                    </div>
+                                 </div>
+                              </blockquote>
+                           </div>
+                        </div>
+                     </div>
+                     {% endfor %}
+            
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-2"></div>
+            
+            <div class="col-12">
+               
+               <div class="tp-contact-form-wrap">
+                  <h3 class="tp-contact-form-title mb-50">Leave your reply</h3>
+                  <form action="" method='POST'>
+                     {% csrf_token %}
+                     
+                     <div class="tp-contact-form-input">
+                        <div class="row">
+                           
+                           <div class="col-12">
+                              <div class="mb-20 lh-1">
+                                 <textarea class="input textarea" name='message' placeholder="Write your message"></textarea>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="mb-20">
+                                 <input class="input" type="text" name='name' placeholder="Your name">
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="mb-20">
+                                 <input class="input" type="text" name='city' placeholder="Your City">
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="mb-20">
+                                 <input class="input" type="email" name='email'  placeholder="Your email">
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="mb-20">
+                                 <select name="blog_id" class="input">
+                                    <option value="">Select Blog</option>
+                                    {% for blog in blogs %}
+                                      <option value="{{ blog.id }}">{{ blog.title }}</option>
+                                    {% endfor %}
+                                  </select>
+                              </div>
+                           </div>
+                           <div class="col-12">
+                              <button type="submit" class="tp-contact-form-btn">Send your message</button>
+                           </div>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+               
+               
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- tp-main-area-end -->
+
+</main>
+{% endblock %}
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+var swiper = new Swiper(".feedbackSwiper", {
+   loop: true,
+   autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+   },
+   speed: 800,
+   effect: "slide",
+});
+</script>
+
+
+
+
+
+{% include 'includes/footer.html' %}
+
