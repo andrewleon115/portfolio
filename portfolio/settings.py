@@ -78,17 +78,21 @@ WSGI_APPLICATION = "portfolio.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',  # ✅ Use this for mysql-connector
-        'NAME': 'portfolio',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',  # ✅ Use this for mysql-connector
+#         'NAME': 'portfolio',
+#         'USER': 'root',
+#         'PASSWORD': '',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
+# }
+import dj_database_url
 
+DATABASES = {
+    'default': dj_database_url.config(conn_max_age=600)
+}
 
 
 
